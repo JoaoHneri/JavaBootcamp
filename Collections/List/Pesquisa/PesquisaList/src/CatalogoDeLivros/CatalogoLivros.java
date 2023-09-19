@@ -28,6 +28,32 @@ public class CatalogoLivros {
 			}
 		}return LivroPorAutor;
 	}
+	
+	public List<Livros> pesquisarPorTitulo(String titulo) {	
+		List<Livros> LivroPorTitulo = new ArrayList<>();
+		if(!catalogoDeLivros.isEmpty()) {
+			for(Livros i : catalogoDeLivros) {
+				if(i.getTitulo().equalsIgnoreCase(titulo)) {
+					LivroPorTitulo.add(i);
+					
+				}
+			}
+		}return LivroPorTitulo;
+		
+	}
+	
+	public List<Livros> pesquisarPorIntervaloAnos(int anoInicial, int anoFinal){
+		List<Livros> LivroPorIntervalo = new ArrayList<>();
+		if(!catalogoDeLivros.isEmpty()) {
+			for(Livros i: catalogoDeLivros) {
+				if(i.getAnoDePublicacao() >= anoInicial && i.getAnoDePublicacao() <= anoFinal) {
+					LivroPorIntervalo.add(i);
+				}
+			}
+		}
+		return LivroPorIntervalo;
+	}
+	
 
 		
 	
@@ -35,7 +61,12 @@ public class CatalogoLivros {
 	public static void main(String[] args) {
 		CatalogoLivros catalogoLivros = new CatalogoLivros();
 		catalogoLivros.adicionarLivro("Harry Potter", "J.K Rowlling", 2000);
+		catalogoLivros.adicionarLivro("Mortal Kombat 1", "Eddie", 2007);
+		catalogoLivros.adicionarLivro("Mortal Kombat 2", "Eddie", 2016);
+		catalogoLivros.adicionarLivro("Mortal Kombat 3", "Eddie", 2020);
 		System.out.println(catalogoLivros.pesquisarPorAutor("J.K Rowlling"));
+		System.out.println(catalogoLivros.pesquisarPorTitulo("Mortal Kombat 1"));
+		System.out.println(catalogoLivros.pesquisarPorIntervaloAnos(2016, 2020));
 
 	}
 
