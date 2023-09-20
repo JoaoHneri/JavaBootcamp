@@ -45,7 +45,7 @@ public class ConjuntoConvidados {
 		ConjuntoConvidados conjuntoConvidados = new ConjuntoConvidados();
 		conjuntoConvidados.adicionarConvidado("Yuta", 1);
 		conjuntoConvidados.adicionarConvidado("João", 2);
-		conjuntoConvidados.adicionarConvidado("Dan", 3);
+		conjuntoConvidados.adicionarConvidado("Dan", 2);
 		conjuntoConvidados.adicionarConvidado("Gojo", 4);
 		conjuntoConvidados.adicionarConvidado("Yuji", 5);
 		conjuntoConvidados.exibirConvidados();
